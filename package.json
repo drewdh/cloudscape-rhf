@@ -1,0 +1,53 @@
+{
+  "name": "cloudscape-rhf",
+  "version": "0.1.0",
+  "description": "React Hook Form wrappers for Cloudscape Design System components",
+  "keywords": [
+    "cloudscape",
+    "react-hook-form",
+    "rhf",
+    "aws",
+    "form",
+    "react"
+  ],
+  "author": "Drew Hanberry",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drewhanberry/cloudscape-rhf.git"
+  },
+  "homepage": "https://github.com/drewhanberry/cloudscape-rhf#readme",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@cloudscape-design/components": ">=3",
+    "react": ">=18",
+    "react-hook-form": ">=7"
+  },
+  "devDependencies": {
+    "@cloudscape-design/components": "^3.0.1255",
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.74.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
