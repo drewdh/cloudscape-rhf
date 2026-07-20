@@ -14,9 +14,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drewhanberry/cloudscape-rhf.git"
+    "url": "git+https://github.com/drewdh/cloudscape-rhf.git"
   },
-  "homepage": "https://github.com/drewhanberry/cloudscape-rhf#readme",
+  "homepage": "https://github.com/drewdh/cloudscape-rhf#readme",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
