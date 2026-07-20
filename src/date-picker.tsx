@@ -6,21 +6,26 @@ import {
   useFormContext,
 } from 'react-hook-form';
 import DatePicker, { type DatePickerProps } from '@cloudscape-design/components/date-picker';
+import { RefAttributes } from 'react';
+
+import useMergeRefs from './utilities/use-merge-refs';
 
 export default function RhfDatePicker<T extends FieldValues, TName extends FieldPath<T>>({
   name,
   onBlur,
   onChange,
+  ref,
   rules,
   ...props
 }: Props<T, TName>) {
   const { control, trigger } = useFormContext<T, TName>();
   const { field, fieldState } = useController({ name, rules, control });
+  const mergedRef = useMergeRefs(ref, field.ref);
 
   return (
     <DatePicker
       {...props}
-      ref={field.ref}
+      ref={mergedRef}
       value={field.value ?? ''}
       onBlur={(e) => {
         field.onBlur();
@@ -40,4 +45,5 @@ export default function RhfDatePicker<T extends FieldValues, TName extends Field
 
 interface Props<T extends FieldValues, TName extends FieldPath<T>>
   extends Omit<DatePickerProps, 'value' | 'name'>,
+    RefAttributes<DatePickerProps.Ref>,
     Omit<UseControllerProps<T, TName>, 'control'> {}
